@@ -83,6 +83,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = new Category;
+        $objCategoriaSelecionado = $categories->find($id);
+        $objCategoriaSelecionado->delete();
+        return redirect()->route('categoria.index');
     }
+
+       
 }
